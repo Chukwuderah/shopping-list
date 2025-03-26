@@ -1,9 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const Header = ({ title }) => {
   return (
-    <motion.header 
+    <motion.header
       className="sticky top-0 z-10 w-full py-4 bg-white text-gray-900 shadow"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}

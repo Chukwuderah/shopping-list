@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ListItem = ({ item, onToggle, onDelete, onEdit }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -20,9 +20,9 @@ const ListItem = ({ item, onToggle, onDelete, onEdit }) => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       saveEdit();
-    } else if (e.key === 'Escape') {
+    } else if (e.key === "Escape") {
       setIsEditing(false);
       setEditValue(item.name);
     }
@@ -35,13 +35,21 @@ const ListItem = ({ item, onToggle, onDelete, onEdit }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: -10 }}
       transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className={`border-gray-200 p-4 rounded-lg mb-3 transition-all ${item.completed ? 'bg-gray-100' : 'bg-white shadow'}`}
+      className={`border-gray-200 p-4 rounded-lg mb-3 transition-all ${
+        item.completed ? "bg-gray-100" : "bg-white shadow"
+      }`}
     >
       <div className="flex items-center gap-3">
         <button
           onClick={handleToggle}
-          className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all ${item.completed ? 'border-blue-500 bg-blue-500 text-white' : 'border-gray-400'}`}
-          aria-label={item.completed ? 'Mark as incomplete' : 'Mark as complete'}
+          className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all ${
+            item.completed
+              ? "border-blue-500 bg-blue-500 text-white"
+              : "border-gray-400"
+          }`}
+          aria-label={
+            item.completed ? "Mark as incomplete" : "Mark as complete"
+          }
         >
           {item.completed && (
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -85,7 +93,11 @@ const ListItem = ({ item, onToggle, onDelete, onEdit }) => {
               >
                 <span
                   onClick={startEditing}
-                  className={`text-base cursor-pointer ${item.completed ? 'text-gray-400 line-through' : 'text-gray-900'}`}
+                  className={`text-base cursor-pointer ${
+                    item.completed
+                      ? "text-gray-400 line-through"
+                      : "text-gray-900"
+                  }`}
                 >
                   {item.name}
                 </span>

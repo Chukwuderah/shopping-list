@@ -1,9 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const EmptyState = () => {
   return (
-    <motion.div 
+    <motion.div
       className="flex flex-col items-center justify-center border border-gray-200 p-8 mt-8 mb-8 rounded-lg bg-gray-100"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
